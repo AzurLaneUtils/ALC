@@ -45,7 +45,7 @@ interface Weapon {
     val rarity: Int
 
     /** 武器的适用性，表示武器可以用于哪些舰船 */
-    val applicability: Array<Type.ShipType>
+    val applicability: Array<Type.Applicability>
 
     /**
      * 该类存储武器强化等级的常量。
