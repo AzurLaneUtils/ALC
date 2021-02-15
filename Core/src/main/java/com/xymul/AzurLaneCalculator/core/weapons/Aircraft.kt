@@ -15,7 +15,7 @@ class Aircraft(
     override val cd: Double,
     override val coefficient: Double,
     override val majorAttr: Int,
-    override val levelOfWeapon: Int,
+    override val level: Int,
     override val name: String,
     override val rarity: Int,
     override val applicability: Array<Type.Applicability>

@@ -1,6 +1,5 @@
 package com.xymul.AzurLaneCalculator.core
 
-import com.sun.imageio.plugins.tiff.TIFFT4Compressor
 import com.xymul.AzurLaneCalculator.core.helper.ShellEfficiency
 
 interface Weapon {
@@ -36,54 +35,16 @@ interface Weapon {
     val minorAttrType: Type.BonusType?
         get() = null
 
-    /** 武器的等级，该属性必须是[Weapon.WeaponLevel.Companion]中的一项 */
-    val levelOfWeapon: Int
+    /** 武器的等级，该属性必须是[AzurLaneConstants.StrengtheningLevel]中的一项 */
+    val level: Int
 
     /** 武器的名字 */
     val name: String
-    /** 武器的稀有度，该属性必须是[Weapon.Rarities.Companion]中的一项 */
+    /** 武器的稀有度，该属性必须是[AzurLaneConstants.Rarities]中的一项 */
     val rarity: Int
 
     /** 武器的适用性，表示武器可以用于哪些舰船 */
     val applicability: Array<Type.Applicability>
-
-    /**
-     * 该类存储武器强化等级的常量。
-     * 从PLUS0到PLUS13，依次对应+0到+13
-     * */
-    class WeaponLevel {
-        companion object {
-            const val PLUS0 = 0
-            const val PLUS1 = 1
-            const val PLUS2 = 2
-            const val PLUS3 = 3
-            const val PLUS4 = 4
-            const val PLUS5 = 5
-            const val PLUS6 = 6
-            const val PLUS7 = 7
-            const val PLUS8 = 8
-            const val PLUS9 = 9
-            const val PLUS10 = 10
-            const val PLUS11 = 11
-            const val PLUS12 = 12
-            const val PLUS13 = 13
-        }
-    }
-
-    /**
-     * 该类存储武器稀有度的常量。
-     * 从T1到T6，依次对应游戏中武器装备的星级
-     * */
-    class Rarities {
-        companion object {
-            const val T1 = 35
-            const val T2 = 58
-            const val T3 = 90
-            const val T4 = 132
-            const val T5 = 195
-            const val T6 = 320
-        }
-    }
 
     companion object {
         /**
