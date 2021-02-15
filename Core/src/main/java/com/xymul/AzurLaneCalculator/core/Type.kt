@@ -48,6 +48,10 @@ interface Type {
         DD, CL, CA, CB, CLT, CAV, BB, BC, BM, BBV, CV, CVL, AR, SS
     }
 
+    enum class Applicability : Type {
+        DD, CL, CA, CB, CLT, CAV, BB, BC, BM, BBV, CV, CVL, AR, SS, ALL
+    }
+
     /**
      * 表示属性值的加成类型
      * */

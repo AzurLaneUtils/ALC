@@ -18,6 +18,6 @@ class AntiAircraftGun(
     override val levelOfWeapon: Int,
     override val name: String,
     override val rarity: Int,
-    override val applicability: Array<Type.ShipType>
+    override val applicability: Array<Type.Applicability>
 ) : Weapon {
 }
