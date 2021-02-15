@@ -6,12 +6,13 @@ import com.xymul.AzurLaneCalculator.core.helper.EquipmentSLots
 import com.xymul.AzurLaneCalculator.core.helper.WeaponSlots
 
 /**
- * 表示该舰船属于**驱逐舰**
+ * 表示该舰船属于轻巡洋舰或带有鱼雷的轻巡洋舰
  * */
-class Destroyer(
-    override val affection: Warship.Affection,
-    override val level: Int,
+class LightCruiser(
+    override val weaponSlots: WeaponSlots,
+    override val equipmentSLots: EquipmentSLots,
     override val name: String,
+    override val level: Int,
     override val health: Int,
     override val armorType: Type.ArmorType,
     override val reload: Int,
@@ -25,12 +26,13 @@ class Destroyer(
     override val cost: Int,
     override val accuracy: Int,
     override val antiSubmarine: Int,
+    override val hasTorpedo: Boolean,
     override val hasAntiAircraftGun: Boolean,
-    override val weaponSlots: WeaponSlots,
-    override val equipmentSLots: EquipmentSLots
+    override val affection: Warship.Affection
 ) : Warship {
-    override val shipType = Type.ShipType.DD
-    override val hasTorpedo: Boolean = true
-    override val hasSecondaryGun: Boolean = true
+    override val shipType: Type.ShipType =
+        if (hasTorpedo) Type.ShipType.CLT
+        else Type.ShipType.CL
     override val hasMainGun: Boolean = true
+    override val hasSecondaryGun: Boolean = !hasTorpedo
 }

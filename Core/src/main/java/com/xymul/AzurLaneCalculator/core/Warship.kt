@@ -15,51 +15,51 @@ interface Warship {
     val equipmentSLots: EquipmentSLots
 
     /** 舰船的名称 */
-    var name: String
+    val name: String
     /** 舰船的等级 */
-    var level: Int
+    val level: Int
 
     /** 舰船的血量 */
-    var health: Int
+    val health: Int
     /** 舰船的装甲类型 */
-    var armorType: Type.ArmorType
+    val armorType: Type.ArmorType
     /** 舰船的装填属性 */
-    var reload: Int
+    val reload: Int
     /** 舰船的幸运属性 */
-    var lucky: Int
+    val lucky: Int
     /** 舰船的炮击属性 */
-    var firepower: Int
+    val firepower: Int
     /** 舰船的雷击属性 */
-    var torpedo: Int
+    val torpedo: Int
     /** 舰船的机动属性 */
-    var evasion: Int
+    val evasion: Int
     /** 舰船的速度属性 */
-    var speed: Int
+    val speed: Int
     /** 舰船的防空属性 */
-    var antiAircraft: Int
+    val antiAircraft: Int
     /** 舰船的航空属性 */
-    var aviation: Int
+    val aviation: Int
     /** 舰船的油耗 **/
-    var cost: Int
+    val cost: Int
     /** 舰船的命中属性 */
-    var accuracy: Int
+    val accuracy: Int
     /** 舰船的反潜属性 */
-    var antiSubmarine: Int
+    val antiSubmarine: Int
 
     /** 舰船的类型 */
     val shipType: Type.ShipType
 
     /** 舰船是否拥有主炮 */
-    var hasMainGun: Boolean
+    val hasMainGun: Boolean
     /** 舰船是否拥有鱼雷 */
-    var hasTorpedo: Boolean
+    val hasTorpedo: Boolean
     /** 舰船是否拥有副炮 */
-    var hasSecondaryGun: Boolean
+    val hasSecondaryGun: Boolean
     /** 舰船是否拥有防空炮 */
-    var hasAntiAircraftGun: Boolean
+    val hasAntiAircraftGun: Boolean
 
     /** 好感度 */
-    var affection: Affection
+    val affection: Affection
 
     /** 代表一个船的好感度 */
     enum class Affection {
@@ -91,5 +91,11 @@ interface Warship {
             weaponSlot2, slot2Efficiency, slot2Max,
             weaponSlot3, slot2Efficiency, slot3Max,
         )
+
+        /**
+         * 创建一个装备插槽的实例
+         * */
+        fun createEquipmentSlots(eq1: Equipment, eq2: Equipment): EquipmentSLots =
+            EquipmentSLots(eq1, eq2)
     }
 }
