@@ -31,6 +31,6 @@ class Destroyer(
 ) : Warship {
     override val shipType = Type.ShipType.DD
     override val hasTorpedo: Boolean = true
-    override val hasSecondaryGun: Boolean = true
+    override val hasSecondaryGun: Boolean = false
     override val hasMainGun: Boolean = true
 }
