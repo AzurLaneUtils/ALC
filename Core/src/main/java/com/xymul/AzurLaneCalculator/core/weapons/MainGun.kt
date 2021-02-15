@@ -17,7 +17,7 @@ class MainGun(
     override val majorAttr: Int,
     override val minorAttr: Int,
     override val minorAttrType: Type.BonusType?,
-    override val levelOfWeapon: Int,
+    override val level: Int,
     override val name: String,
     override val rarity: Int,
     override val applicability: Array<Type.Applicability>
