@@ -4,12 +4,9 @@ import com.xymul.AzurLaneCalculator.core.Type
 import com.xymul.AzurLaneCalculator.core.Weapon
 import com.xymul.AzurLaneCalculator.core.helper.ShellEfficiency
 
-/**
- * 表示武器属于**舰载鱼雷**
- * */
-class Torpedo(
+class CLMainGun(
     override val basicDamage: Int,
-    override val shellType: Type.TorpedoType,
+    override val shellType: Type,
     override val efficiencyToArmor: ShellEfficiency,
     override val hit: Int,
     override val cd: Double,
@@ -17,9 +14,9 @@ class Torpedo(
     override val majorAttr: Int,
     override val level: Int,
     override val name: String,
-    override val rarity: Int,
+    override val rarity: Int
 ) : Weapon {
     override val applicability: Array<Type.Applicability> = arrayOf(
-        Type.Applicability.CAT, Type.Applicability.CLT, Type.Applicability.DD
+        Type.Applicability.CL, Type.Applicability.BB, Type.Applicability.BC
     )
 }

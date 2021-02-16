@@ -47,6 +47,10 @@ interface Weapon {
     val applicability: Array<Type.Applicability>
 
     companion object {
+        fun makeWeapon(targetWeaponApplicability: Array<Type.Applicability>): Weapon {
+            TODO()
+        }
+
         /**
          * 创建[ShellEfficiency]的实例
          * */

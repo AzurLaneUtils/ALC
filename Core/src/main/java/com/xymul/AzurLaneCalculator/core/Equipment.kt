@@ -6,7 +6,7 @@ package com.xymul.AzurLaneCalculator.core
  */
 interface Equipment {
     /**
-     * 该属性表示该装备提供那些加成，以及加成的值是多少
+     * 该属性表示该装备提供哪些加成，以及加成的值是多少
      * */
     val attributes: Map<Type.BonusType, Int>
 

@@ -68,6 +68,10 @@ fun levelBonus(levelDifference: Int): Double =
         else -> levelDifference * 0.02
     }
 
+fun burnDamage() : CalculateResult {
+    TODO()
+}
+
 // todo: 减伤公式
 
 
