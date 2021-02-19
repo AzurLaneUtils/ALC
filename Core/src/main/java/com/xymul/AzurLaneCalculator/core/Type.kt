@@ -2,8 +2,6 @@ package com.xymul.AzurLaneCalculator.core
 
 /**
  * 该接口是[com.xymul.AzurLaneCalculator.core.Type]下所有内部类的父接口，用于表示各种类型
- *
- * todo: reformat code
  * */
 interface Type {
     /**

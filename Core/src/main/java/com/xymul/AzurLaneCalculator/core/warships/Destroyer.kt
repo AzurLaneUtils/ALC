@@ -3,7 +3,7 @@ package com.xymul.AzurLaneCalculator.core.warships
 import com.xymul.AzurLaneCalculator.core.Type
 import com.xymul.AzurLaneCalculator.core.Warship
 import com.xymul.AzurLaneCalculator.core.helper.EquipmentSLots
-import com.xymul.AzurLaneCalculator.core.helper.WeaponSlots
+import com.xymul.AzurLaneCalculator.core.helper.WarshipWeapons
 
 /**
  * 表示该舰船属于**驱逐舰**
@@ -26,7 +26,7 @@ class Destroyer(
     override val accuracy: Int,
     override val antiSubmarine: Int,
     override val hasAntiAircraftGun: Boolean,
-    override val weaponSlots: WeaponSlots,
+    override val weaponSlots: WarshipWeapons,
     override val equipmentSLots: EquipmentSLots
 ) : Warship {
     override val shipType = Type.ShipType.DD

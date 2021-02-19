@@ -5,17 +5,17 @@ import com.xymul.AzurLaneCalculator.core.Warship
 import com.xymul.AzurLaneCalculator.core.helper.EquipmentSLots
 import com.xymul.AzurLaneCalculator.core.helper.WarshipWeapons
 
-class HeavyCruiser(
-    override val weaponSlots: WarshipWeapons,
-    override val equipmentSLots: EquipmentSLots,
-    override val name: String,
+/**
+ * 表示一艘正航
+ * */
+class AircraftCarrier(
+    override val affection: Warship.Affection,
     override val level: Int,
+    override val name: String,
     override val health: Int,
     override val armorType: Type.ArmorType,
     override val reload: Int,
     override val lucky: Int,
-    override val firepower: Int,
-    override val torpedo: Int,
     override val evasion: Int,
     override val speed: Int,
     override val antiAircraft: Int,
@@ -23,13 +23,14 @@ class HeavyCruiser(
     override val cost: Int,
     override val accuracy: Int,
     override val antiSubmarine: Int,
-    override val hasTorpedo: Boolean,
-    override val hasAntiAircraftGun: Boolean,
-    override val affection: Warship.Affection
+    override val weaponSlots: WarshipWeapons,
+    override val equipmentSLots: EquipmentSLots
 ) : Warship {
-    override val shipType: Type.ShipType =
-        if (hasTorpedo) Type.ShipType.CAT
-        else Type.ShipType.CA
-    override val hasMainGun: Boolean = true
-    override val hasSecondaryGun: Boolean = !hasTorpedo
+    override val shipType: Type.ShipType = Type.ShipType.CV
+    override val hasMainGun: Boolean = false
+    override val hasTorpedo: Boolean = false
+    override val hasSecondaryGun: Boolean = false
+    override val hasAntiAircraftGun: Boolean = false
+    override val torpedo: Int = 0
+    override val firepower: Int = 0
 }

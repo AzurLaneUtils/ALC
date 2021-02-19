@@ -3,13 +3,13 @@ package com.xymul.AzurLaneCalculator.core.warships
 import com.xymul.AzurLaneCalculator.core.Type
 import com.xymul.AzurLaneCalculator.core.Warship
 import com.xymul.AzurLaneCalculator.core.helper.EquipmentSLots
-import com.xymul.AzurLaneCalculator.core.helper.WeaponSlots
+import com.xymul.AzurLaneCalculator.core.helper.WarshipWeapons
 
 /**
  * 表示该舰船属于轻巡洋舰或带有鱼雷的轻巡洋舰
  * */
 class LightCruiser(
-    override val weaponSlots: WeaponSlots,
+    override val weaponSlots: WarshipWeapons,
     override val equipmentSLots: EquipmentSLots,
     override val name: String,
     override val level: Int,

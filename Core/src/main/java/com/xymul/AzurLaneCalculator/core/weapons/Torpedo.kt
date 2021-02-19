@@ -19,7 +19,5 @@ class Torpedo(
     override val name: String,
     override val rarity: Int,
 ) : Weapon {
-    override val applicability: Array<Type.Applicability> = arrayOf(
-        Type.Applicability.CAT, Type.Applicability.CLT, Type.Applicability.DD
-    )
+    override val applicability: Array<Type.Applicability> = Weapon.torpedoApplicability
 }

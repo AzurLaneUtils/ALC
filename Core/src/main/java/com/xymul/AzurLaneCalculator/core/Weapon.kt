@@ -1,6 +1,7 @@
 package com.xymul.AzurLaneCalculator.core
 
 import com.xymul.AzurLaneCalculator.core.helper.ShellEfficiency
+import com.xymul.AzurLaneCalculator.core.Type.Applicability.*
 
 interface Weapon {
     /** 武器的单发子弹伤害 */
@@ -47,9 +48,13 @@ interface Weapon {
     val applicability: Array<Type.Applicability>
 
     companion object {
-        fun makeWeapon(targetWeaponApplicability: Array<Type.Applicability>): Weapon {
-            TODO()
-        }
+        // todo: all weapon's applicability
+        val aircraftApplicability: Array<Type.Applicability> = arrayOf(CV, CVL, CAV, BBV)
+        val DDMainGunApplicability: Array<Type.Applicability> = arrayOf(DD, BB, BC, CA, CL, CB)
+        val CLMainGunApplicability: Array<Type.Applicability> = arrayOf(CL, BB, BC)
+        val torpedoApplicability: Array<Type.Applicability> = arrayOf(DD, CLT, CAT)
+
+        // todo: Make other instance
 
         /**
          * 创建[ShellEfficiency]的实例

@@ -21,9 +21,5 @@ class DDMainGun(
     override val name: String,
     override val rarity: Int,
 ) : Weapon {
-    override val applicability: Array<Type.Applicability> = arrayOf(
-        Type.Applicability.DD, Type.Applicability.BB,
-        Type.Applicability.BC, Type.Applicability.CA,
-        Type.Applicability.CL, Type.Applicability.CB // 目前游戏CB仅[吾妻]一艘，暂且认定为CB都可以装备DD炮
-    )
+    override val applicability: Array<Type.Applicability> = Weapon.DDMainGunApplicability
 }

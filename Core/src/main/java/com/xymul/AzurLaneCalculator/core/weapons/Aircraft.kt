@@ -19,8 +19,5 @@ class Aircraft(
     override val name: String,
     override val rarity: Int,
 ) : Weapon {
-    override val applicability: Array<Type.Applicability> = arrayOf(
-        Type.Applicability.CV, Type.Applicability.CVL,
-        Type.Applicability.CAV, Type.Applicability.BBV
-    )
+    override val applicability: Array<Type.Applicability> = Weapon.aircraftApplicability
 }

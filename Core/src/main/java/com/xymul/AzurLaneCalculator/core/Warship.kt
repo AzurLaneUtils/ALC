@@ -1,7 +1,8 @@
 package com.xymul.AzurLaneCalculator.core
 
 import com.xymul.AzurLaneCalculator.core.helper.EquipmentSLots
-import com.xymul.AzurLaneCalculator.core.helper.WeaponSlots
+import com.xymul.AzurLaneCalculator.core.helper.WarshipWeapons
+import com.xymul.AzurLaneCalculator.core.helper.WeaponSlot
 
 /**
  * 该接口代表一个舰船实体
@@ -10,7 +11,7 @@ import com.xymul.AzurLaneCalculator.core.helper.WeaponSlots
  */
 interface Warship {
     /** 舰船的武器插槽 */
-    val weaponSlots: WeaponSlots
+    val weaponSlots: WarshipWeapons
 
     /** 舰船的设备插槽 */
     val equipmentSLots: EquipmentSLots
@@ -78,13 +79,24 @@ interface Warship {
     /** 好感度 */
     val affection: Affection
 
+    fun aircraftDamageReduction(): Double = (this.antiAircraft / (this.antiAircraft + 150.0))
+
+
     /** 代表一个船的好感度 */
     enum class Affection {
+        /** 誓约200(200) */
+        OATH200,
+        /** 誓约(100-199.9) */
         OATH,
+        /** 爱(100) */
         LOVE,
+        /** 喜欢(80-99.9) */
         CRUSH,
+        /** 友好(60-79.9) */
         FRIENDLY,
+        /** 陌生(50-59.9) */
         STRANGER,
+        /** 失望(0-49.9) */
         DISAPPOINTED
     }
 
@@ -105,27 +117,17 @@ interface Warship {
 
         /**
          * 创建一个武器插槽的实例
+         *
+         * @param wp 需要装备的武器
+         * @param eff 武器插槽的效率
+         * @param max 武器的底座，默认为1
+         * @param isPrefilled 是否预装填，默认为false
          */
-        fun createWeaponSlots(
-            weaponSlot1: Weapon,
-            slot1Efficiency: Double,
-            slot1Max: Int,
-            weaponSlot2: Weapon,
-            slot2Efficiency: Double,
-            slot2Max: Int,
-            weaponSlot3: Weapon,
-            slot3Efficiency: Double,
-            slot3Max: Int
-        ): WeaponSlots = WeaponSlots(
-            weaponSlot1, slot1Efficiency, slot1Max,
-            weaponSlot2, slot2Efficiency, slot2Max,
-            weaponSlot3, slot3Efficiency, slot3Max,
-        )
-
-        /**
-         * 创建一个装备插槽的实例
-         * */
-        fun createEquipmentSlots(eq1: Equipment, eq2: Equipment): EquipmentSLots =
-            EquipmentSLots(eq1, eq2)
+        fun createWeaponSlot(
+            wp: Weapon,
+            eff: Double,
+            max: Int = 1,
+            isPrefilled: Boolean = false
+        ): WeaponSlot = WeaponSlot(wp, eff, max, isPrefilled)
     }
 }

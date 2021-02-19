@@ -16,7 +16,5 @@ class CLMainGun(
     override val name: String,
     override val rarity: Int
 ) : Weapon {
-    override val applicability: Array<Type.Applicability> = arrayOf(
-        Type.Applicability.CL, Type.Applicability.BB, Type.Applicability.BC
-    )
+    override val applicability: Array<Type.Applicability> = Weapon.CLMainGunApplicability
 }

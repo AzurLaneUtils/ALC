@@ -12,6 +12,4 @@ data class CalculateResult(
     val success: Boolean,
     /** 如果计算失败，则失败处发生的异常 */
     val error: Throwable?
-): Serializable {
-
-}
+): Serializable

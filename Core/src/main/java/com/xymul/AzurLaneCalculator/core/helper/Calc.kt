@@ -2,6 +2,7 @@ package com.xymul.AzurLaneCalculator.core
 
 import com.xymul.AzurLaneCalculator.core.Type.ArmorType
 import com.xymul.AzurLaneCalculator.core.helper.CalculateResult
+import com.xymul.AzurLaneCalculator.core.helper.NumberException
 import com.xymul.AzurLaneCalculator.core.helper.ShellEfficiency
 
 import kotlin.random.Random
