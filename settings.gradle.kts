@@ -1,3 +1,4 @@
 rootProject.name = "AzurLaneCalculator"
 
-include(":Core")
+include("alc-core")
+include("alc-core")
