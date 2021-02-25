@@ -14,9 +14,6 @@
 ### 如何贡献?
 - 优化代码
 - 添加新特性
-  - 在添加新特性前，请以markdown/html形式在/proposals目录下添加您的提案,
-    或直接与开发者沟通
-  - 提案模板: [proposal.template](./docs/proposal.template.md)
 - 解决issues中的问题
 
 ### 注意事项
