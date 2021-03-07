@@ -3,7 +3,7 @@
 > 在为本项目做出贡献前，您需要确保您会使用kotlin语言
 
 ### 项目相关
-- 项目支持maven构建(未来会加入对gradle的支持)
+- 项目支持maven构建<s>(未来会加入对gradle的支持)</s>(不可能支持gradle的)
 - 项目基于kotlin1.4.20进行开发，运行坏境为openjdk15
 - 项目分为两个模块:Client、Core
 
