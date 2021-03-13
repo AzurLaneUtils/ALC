@@ -1,8 +1,5 @@
-package com.xymul.AzurLaneCalculator.core
+package org.alu.AzurLaneCalculator.core
 
-/**
- * 该接口是[com.xymul.AzurLaneCalculator.core.Type]下所有内部类的父接口，用于表示各种类型
- * */
 interface Type {
     /**
      * 表示装甲类型

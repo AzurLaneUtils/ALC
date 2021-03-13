@@ -1,4 +1,4 @@
-package com.xymul.AzurLaneCalculator.core
+package org.alu.AzurLaneCalculator.core
 
 /**
  * 表示一个设备

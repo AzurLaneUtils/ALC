@@ -1,6 +1,6 @@
-package com.xymul.AzurLaneCalculator.core.helper
+package org.alu.AzurLaneCalculator.core.helper
 
-import com.xymul.AzurLaneCalculator.core.Weapon
+import org.alu.AzurLaneCalculator.core.Weapon
 
 /**
  * 表示一个武器插槽

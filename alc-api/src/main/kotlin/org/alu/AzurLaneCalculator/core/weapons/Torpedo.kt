@@ -1,8 +1,8 @@
-package com.xymul.AzurLaneCalculator.core.weapons
+package org.alu.AzurLaneCalculator.core.weapons
 
-import com.xymul.AzurLaneCalculator.core.Type
-import com.xymul.AzurLaneCalculator.core.Weapon
-import com.xymul.AzurLaneCalculator.core.helper.ShellEfficiency
+import org.alu.AzurLaneCalculator.core.Type
+import org.alu.AzurLaneCalculator.core.Weapon
+import org.alu.AzurLaneCalculator.core.helper.ShellEfficiency
 
 /**
  * 表示武器属于**舰载鱼雷**

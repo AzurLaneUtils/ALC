@@ -1,4 +1,4 @@
-package com.xymul.AzurLaneCalculator.core.helper
+package org.alu.AzurLaneCalculator.core.helper
 
 import java.io.Serializable
 

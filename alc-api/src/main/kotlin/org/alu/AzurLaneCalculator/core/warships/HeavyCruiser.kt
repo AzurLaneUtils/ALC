@@ -1,9 +1,9 @@
-package com.xymul.AzurLaneCalculator.core.warships
+package org.alu.AzurLaneCalculator.core.warships
 
-import com.xymul.AzurLaneCalculator.core.Type
-import com.xymul.AzurLaneCalculator.core.Warship
-import com.xymul.AzurLaneCalculator.core.helper.EquipmentSlots
-import com.xymul.AzurLaneCalculator.core.helper.WarshipWeapons
+import org.alu.AzurLaneCalculator.core.Type
+import org.alu.AzurLaneCalculator.core.Warship
+import org.alu.AzurLaneCalculator.core.helper.EquipmentSlots
+import org.alu.AzurLaneCalculator.core.helper.WarshipWeapons
 
 class HeavyCruiser(
     override val weaponSlots: WarshipWeapons,

@@ -1,7 +1,7 @@
-package com.xymul.AzurLaneCalculator.core
+package org.alu.AzurLaneCalculator.core
 
-import com.xymul.AzurLaneCalculator.core.helper.EquipmentSlots
-import com.xymul.AzurLaneCalculator.core.helper.WarshipWeapons
+import org.alu.AzurLaneCalculator.core.helper.EquipmentSlots
+import org.alu.AzurLaneCalculator.core.helper.WarshipWeapons
 
 /**
  * 该接口代表一个舰船实体
