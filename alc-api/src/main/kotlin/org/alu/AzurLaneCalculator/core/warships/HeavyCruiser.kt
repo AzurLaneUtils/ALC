@@ -2,12 +2,12 @@ package com.xymul.AzurLaneCalculator.core.warships
 
 import com.xymul.AzurLaneCalculator.core.Type
 import com.xymul.AzurLaneCalculator.core.Warship
-import com.xymul.AzurLaneCalculator.core.helper.EquipmentSLots
+import com.xymul.AzurLaneCalculator.core.helper.EquipmentSlots
 import com.xymul.AzurLaneCalculator.core.helper.WarshipWeapons
 
 class HeavyCruiser(
     override val weaponSlots: WarshipWeapons,
-    override val equipmentSLots: EquipmentSLots,
+    override val equipmentSlots: EquipmentSlots,
     override val name: String,
     override val level: Int,
     override val health: Int,
@@ -19,7 +19,6 @@ class HeavyCruiser(
     override val evasion: Int,
     override val speed: Int,
     override val antiAircraft: Int,
-    override val aviation: Int,
     override val cost: Int,
     override val accuracy: Int,
     override val antiSubmarine: Int,
@@ -32,4 +31,5 @@ class HeavyCruiser(
         else Type.ShipType.CA
     override val hasMainGun: Boolean = true
     override val hasSecondaryGun: Boolean = !hasTorpedo
+    override val aviation: Int = 0
 }

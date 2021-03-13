@@ -1,8 +1,7 @@
 package com.xymul.AzurLaneCalculator.core
 
-import com.xymul.AzurLaneCalculator.core.helper.EquipmentSLots
+import com.xymul.AzurLaneCalculator.core.helper.EquipmentSlots
 import com.xymul.AzurLaneCalculator.core.helper.WarshipWeapons
-import com.xymul.AzurLaneCalculator.core.helper.WeaponSlot
 
 /**
  * 该接口代表一个舰船实体
@@ -14,7 +13,7 @@ interface Warship {
     val weaponSlots: WarshipWeapons
 
     /** 舰船的设备插槽 */
-    val equipmentSlots: EquipmentSLots
+    val equipmentSlots: EquipmentSlots
 
     /** 舰船的名称 */
     val name: String
@@ -79,8 +78,8 @@ interface Warship {
     /** 好感度 */
     val affection: Affection
 
+    /** 获取本舰船的防空减免值 */
     fun aircraftDamageReduction(): Double = (this.antiAircraft / (this.antiAircraft + 150.0))
-
 
     /** 代表一个船的好感度 */
     enum class Affection {
@@ -98,36 +97,5 @@ interface Warship {
         STRANGER,
         /** 失望(0-49.9) */
         DISAPPOINTED
-    }
-
-    companion object {
-        fun createWarship(
-            warshipType: Type.ShipType,
-            shipConfig: Warship.() -> Unit
-        ): Warship {
-            TODO(
-                """
-                    impl: (after finishing coding implementations about interface 'Warship')
-                    when (warshipType) {
-                        Type. ... -> shipConfig(XX())
-                    }
-            """.trimIndent()
-            )
-        }
-
-        /**
-         * 创建一个武器插槽的实例
-         *
-         * @param wp 需要装备的武器
-         * @param eff 武器插槽的效率
-         * @param max 武器的底座，默认为1
-         * @param isPrefilled 是否预装填，默认为false
-         */
-        fun createWeaponSlot(
-            wp: Weapon,
-            eff: Double,
-            max: Int = 1,
-            isPrefilled: Boolean = false
-        ): WeaponSlot = WeaponSlot(wp, eff, max, isPrefilled)
     }
 }
