@@ -1,14 +1,11 @@
-package com.xymul.AzurLaneCalculator.core.warships
+package org.alu.AzurLaneCalculator.core.warships
 
 import com.xymul.AzurLaneCalculator.core.Type
 import com.xymul.AzurLaneCalculator.core.Warship
 import com.xymul.AzurLaneCalculator.core.helper.EquipmentSlots
 import com.xymul.AzurLaneCalculator.core.helper.WarshipWeapons
 
-/**
- * 表示该舰船属于轻巡洋舰或带有鱼雷的轻巡洋舰
- * */
-class LightCruiser(
+class BattleShip(
     override val weaponSlots: WarshipWeapons,
     override val equipmentSlots: EquipmentSlots,
     override val name: String,
@@ -25,14 +22,12 @@ class LightCruiser(
     override val cost: Int,
     override val accuracy: Int,
     override val antiSubmarine: Int,
-    override val hasTorpedo: Boolean,
-    override val hasAntiAircraftGun: Boolean,
     override val affection: Warship.Affection
 ) : Warship {
-    override val shipType: Type.ShipType =
-        if (hasTorpedo) Type.ShipType.CLT
-        else Type.ShipType.CL
+    override val shipType: Type.ShipType = Type.ShipType.BB
     override val hasMainGun: Boolean = true
-    override val hasSecondaryGun: Boolean = !hasTorpedo
+    override val hasTorpedo: Boolean = false
+    override val hasSecondaryGun: Boolean = true
+    override val hasAntiAircraftGun: Boolean = true
     override val aviation: Int = 0
 }

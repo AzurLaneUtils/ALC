@@ -54,12 +54,5 @@ interface Weapon {
         val CLMainGunApplicability: Array<Type.Applicability> = arrayOf(CL, BB, BC)
         val torpedoApplicability: Array<Type.Applicability> = arrayOf(DD, CLT, CAT)
 
-        // todo: Make other instance
-
-        /**
-         * 创建[ShellEfficiency]的实例
-         * */
-        fun makeEfficiencyToArmor(light: Double, medium: Double, heavy: Double): ShellEfficiency =
-            ShellEfficiency(light, medium, heavy)
     }
 }
