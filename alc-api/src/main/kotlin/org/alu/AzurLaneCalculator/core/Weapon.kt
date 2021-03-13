@@ -1,7 +1,8 @@
-package com.xymul.AzurLaneCalculator.core
+package org.alu.AzurLaneCalculator.core
 
-import com.xymul.AzurLaneCalculator.core.helper.ShellEfficiency
-import com.xymul.AzurLaneCalculator.core.Type.Applicability.*
+import org.alu.AzurLaneCalculator.core.Type
+import org.alu.AzurLaneCalculator.core.helper.ShellEfficiency
+import org.alu.AzurLaneCalculator.core.Type.Applicability.*
 
 interface Weapon {
     /** 武器的单发子弹伤害 */

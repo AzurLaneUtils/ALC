@@ -1,6 +1,6 @@
-package com.xymul.AzurLaneCalculator.core.helper
+package org.alu.AzurLaneCalculator.core.helper
 
-import com.xymul.AzurLaneCalculator.core.Equipment
+import org.alu.AzurLaneCalculator.core.Equipment
 
 /**
  * 作为舰船设备插槽的存储类

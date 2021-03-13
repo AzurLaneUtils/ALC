@@ -1,4 +1,4 @@
-package com.xymul.AzurLaneCalculator.core
+package org.alu.AzurLaneCalculator.core
 
 interface AzurLaneConstants {
     /** 该类表示装备的稀有度(1*-6*) */
