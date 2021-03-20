@@ -1,4 +1,4 @@
-package org.alu.AzurLaneCalculator.core.helper
+package org.alu.AzurLaneCalculator.core.internal
 
 /**
  * 作为舰船武器插槽的存储类

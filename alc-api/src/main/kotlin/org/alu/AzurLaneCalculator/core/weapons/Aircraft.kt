@@ -2,7 +2,7 @@ package org.alu.AzurLaneCalculator.core.weapons
 
 import org.alu.AzurLaneCalculator.core.Type
 import org.alu.AzurLaneCalculator.core.Weapon
-import org.alu.AzurLaneCalculator.core.helper.ShellEfficiency
+import org.alu.AzurLaneCalculator.core.internal.ShellEfficiency
 
 /**
  * 该类表示**舰载机**类型的武器

@@ -2,7 +2,7 @@ package org.alu.AzurLaneCalculator.core.weapons
 
 import org.alu.AzurLaneCalculator.core.Type
 import org.alu.AzurLaneCalculator.core.Weapon
-import org.alu.AzurLaneCalculator.core.helper.ShellEfficiency
+import org.alu.AzurLaneCalculator.core.internal.ShellEfficiency
 
 /**
  * 表示该武器属于**dd主炮/战列副炮**

@@ -1,7 +1,6 @@
 package org.alu.AzurLaneCalculator.core
 
-import org.alu.AzurLaneCalculator.core.Type
-import org.alu.AzurLaneCalculator.core.helper.ShellEfficiency
+import org.alu.AzurLaneCalculator.core.internal.ShellEfficiency
 import org.alu.AzurLaneCalculator.core.Type.Applicability.*
 
 interface Weapon {

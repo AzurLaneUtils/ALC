@@ -2,8 +2,8 @@ package org.alu.AzurLaneCalculator.core.warships
 
 import org.alu.AzurLaneCalculator.core.Type
 import org.alu.AzurLaneCalculator.core.Warship
-import org.alu.AzurLaneCalculator.core.helper.EquipmentSlots
-import org.alu.AzurLaneCalculator.core.helper.WarshipWeapons
+import org.alu.AzurLaneCalculator.core.internal.EquipmentSlots
+import org.alu.AzurLaneCalculator.core.internal.WarshipWeapons
 
 /**
  * 表示一个维修舰

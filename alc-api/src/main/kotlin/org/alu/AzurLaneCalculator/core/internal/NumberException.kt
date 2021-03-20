@@ -1,4 +1,4 @@
-package org.alu.AzurLaneCalculator.core.helper
+package org.alu.AzurLaneCalculator.core.internal
 
 class NumberException(
     massage: String = "",

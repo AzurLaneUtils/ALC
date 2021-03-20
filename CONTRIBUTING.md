@@ -3,9 +3,8 @@
 > 在为本项目做出贡献前，您需要确保您会使用kotlin语言
 
 ### 项目相关
-- 项目支持maven构建<s>(未来会加入对gradle的支持)</s>(不可能支持gradle的)
+- 项目支持maven构建<s>(未来会加入对gradle的支持)</s><s>(不可能支持gradle的)</s>(我们<s>仍然考虑</s>一定会支持gradle)
 - 项目基于kotlin1.4.20进行开发，运行坏境为openjdk15
-- 项目分为两个模块:Client、Core
 
 ### 分支
 - v0.x、v1.x等代表版本分支，这些分支用于记录该版本的最后稳定更新
@@ -14,12 +13,10 @@
 ### 如何贡献?
 - 优化代码
 - 添加新特性
-  - 在添加新特性前，请以markdown/html形式在/proposals目录下添加您的提案,
-    或直接与开发者沟通
-  - 提案模板: [proposal.template](./docs/proposal.template.md)
 - 解决issues中的问题
 
 ### 注意事项
+- 对于本项目，我们不赞成添加任何的java代码
 - 尽量不要引用新库
 - 遵守kotlin编码规范。如果您使用idea进行开发，那么请将项目的CodeStyle设置为**Kotlin style guide**,
 并且在提交前格式化代码。
