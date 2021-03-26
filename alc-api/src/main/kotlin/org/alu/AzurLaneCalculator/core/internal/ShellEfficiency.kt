@@ -1,4 +1,4 @@
-package org.alu.AzurLaneCalculator.core.helper
+package org.alu.AzurLaneCalculator.core.internal
 
 /**
  * 作为炮弹补正的存储类

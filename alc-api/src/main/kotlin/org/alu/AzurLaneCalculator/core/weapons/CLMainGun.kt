@@ -2,7 +2,7 @@ package org.alu.AzurLaneCalculator.core.weapons
 
 import org.alu.AzurLaneCalculator.core.Type
 import org.alu.AzurLaneCalculator.core.Weapon
-import org.alu.AzurLaneCalculator.core.helper.ShellEfficiency
+import org.alu.AzurLaneCalculator.core.internal.ShellEfficiency
 
 class CLMainGun(
     override val basicDamage: Int,
