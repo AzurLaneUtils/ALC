@@ -3,7 +3,7 @@
 > 在为本项目做出贡献前，您需要确保您会使用kotlin语言
 
 ### 项目相关
-- 项目支持maven构建<s>(未来会加入对gradle的支持)</s><s>(不可能支持gradle的)</s>(我们<s>仍然考虑</s>一定会支持gradle)
+- 项目支持maven和gradle构建
 - 项目基于kotlin1.4.20进行开发，运行坏境为openjdk15
 
 ### 分支
