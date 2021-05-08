@@ -3,3 +3,5 @@
  */
 
 rootProject.name = "AzurLaneCalc"
+
+include (":alc-api")
