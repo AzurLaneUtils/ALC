@@ -1,4 +1,4 @@
-package org.alu.alc.core.internal
+package org.alu.alc.core.units
 
 import org.alu.alc.core.Equipment
 

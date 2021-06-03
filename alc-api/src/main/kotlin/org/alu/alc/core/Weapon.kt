@@ -1,7 +1,7 @@
 package org.alu.alc.core
 
 import org.alu.alc.core.Type.Applicability.*
-import org.alu.alc.core.internal.ShellEfficiency
+import org.alu.alc.core.units.ShellEfficiency
 import org.alu.alc.core.weapons.DDMainGun
 import org.alu.alc.core.AzurLaneConstants.Companion.DEFAULT_NUMBER
 
