@@ -2,8 +2,8 @@ package org.alu.alc.core.warships
 
 import org.alu.alc.core.Type
 import org.alu.alc.core.Warship
-import org.alu.alc.core.internal.EquipmentSlots
-import org.alu.alc.core.internal.WarshipWeapons
+import org.alu.alc.core.units.EquipmentSlots
+import org.alu.alc.core.units.WarshipWeapons
 
 /**
  * 表示该舰船属于**驱逐舰**

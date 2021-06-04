@@ -1,6 +1,6 @@
 package org.alu.alc.core
 
-import org.alu.alc.core.internal.ShipSet
+import org.alu.alc.core.units.ShipSet
 
 data class Fleet(
     val front: ShipSet,

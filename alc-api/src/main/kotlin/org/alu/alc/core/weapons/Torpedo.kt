@@ -2,7 +2,7 @@ package org.alu.alc.core.weapons
 
 import org.alu.alc.core.Type
 import org.alu.alc.core.Weapon
-import org.alu.alc.core.internal.ShellEfficiency
+import org.alu.alc.core.units.ShellEfficiency
 
 /**
  * 表示武器属于**舰载鱼雷**

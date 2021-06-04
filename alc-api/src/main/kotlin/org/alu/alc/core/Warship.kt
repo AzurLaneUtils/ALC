@@ -1,9 +1,9 @@
 package org.alu.alc.core
 
 import org.alu.alc.core.AzurLaneConstants.Companion.DEFAULT_NUMBER
-import org.alu.alc.core.internal.EquipmentSlots
-import org.alu.alc.core.internal.WarshipWeapons
-import org.alu.alc.core.internal.WeaponSlot
+import org.alu.alc.core.units.EquipmentSlots
+import org.alu.alc.core.units.WarshipWeapons
+import org.alu.alc.core.units.WeaponSlot
 import org.alu.alc.core.warships.Destroyer
 
 /**
