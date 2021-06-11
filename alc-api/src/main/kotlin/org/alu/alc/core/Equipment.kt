@@ -6,9 +6,9 @@ package org.alu.alc.core
  */
 interface Equipment {
     /**
-     * 该属性表示该装备提供哪些加成，以及加成的值是多少
+     * 该属性表示该装备提供哪些加成，以及加成的值
      * */
-    val attributes: Map<Type.BonusType, Int>
+    val attributes: Array<Pair<Type.BonusType, Int>> // todo
 
     /**
      * 该属性表示装备的强化等级，该值必须是[AzurLaneConstants.StrengtheningLevel]的一项

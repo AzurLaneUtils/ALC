@@ -5,6 +5,7 @@ import org.alu.alc.core.units.EquipmentSlots
 import org.alu.alc.core.units.WarshipWeapons
 import org.alu.alc.core.units.WeaponSlot
 import org.alu.alc.core.warships.Destroyer
+import org.alu.alc.core.Type.BonusType.*
 
 /**
  * 该接口代表一个舰船实体
@@ -81,8 +82,22 @@ interface Warship {
     /** 好感度 */
     val affection: Affection
 
-    /** 获取本舰船的防空减免值 */
-    fun aircraftDamageReduction(): Double = (this.antiAircraft / (this.antiAircraft + 150.0))
+    val skills: Array<Skill>
+
+    fun getAttr(btype: Type.BonusType): Int =
+        when (btype) {
+            FIREPOWER -> firepower
+            TORPEDO -> torpedo
+            ANTI_AIRCRAFT -> antiAircraft
+            HEALTH -> health
+            RELOAD -> reload
+            LUCKY -> lucky
+            AVIATION -> aviation
+            ACCURACY -> accuracy
+            SPEED -> speed
+            EVASION -> evasion
+            ANTI_SUBMARINE -> antiSubmarine
+        }
 
     companion object {
         fun makeDefaultWarship(): Warship = Destroyer(
@@ -111,7 +126,8 @@ interface Warship {
             DEFAULT_NUMBER,
             DEFAULT_NUMBER,
             DEFAULT_NUMBER,
-            Affection.OATH200
+            Affection.OATH200,
+            arrayOf()
         )
     }
 

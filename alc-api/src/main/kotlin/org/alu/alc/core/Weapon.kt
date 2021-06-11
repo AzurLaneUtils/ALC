@@ -15,7 +15,7 @@ interface Weapon {
      * */
     val shellType: Type
 
-    /** 武器的对甲效率，可以使用[Weapon.makeEfficiencyToArmor]构造 */
+    /** 武器的对甲效率 */
     val efficiencyToArmor: ShellEfficiency
 
     /** 武器的子弹数 */
@@ -26,6 +26,10 @@ interface Weapon {
 
     /** 武器系数 */
     val coefficient: Double
+
+    /** 主炮散步，如果武器是非舰炮类型则为0 */
+    val rng: Int
+        get() = 0
 
     /**
      * 武器的主属性

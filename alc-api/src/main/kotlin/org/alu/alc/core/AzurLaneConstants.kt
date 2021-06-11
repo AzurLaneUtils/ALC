@@ -6,8 +6,8 @@ interface AzurLaneConstants {
     }
 
     /** 该类表示装备的稀有度(1*-6*) */
-    class Rarities {
-        companion object {
+    class Rarities : AzurLaneConstants {
+        companion object : AzurLaneConstants {
             /** T1的装备会额外提供35的战力 */
             const val T1 = 35
             /** T2的装备会额外提供58的战力 */
@@ -24,8 +24,8 @@ interface AzurLaneConstants {
     }
 
     /** 该类表示装备的强化次数 */
-    class StrengtheningLevel {
-        companion object {
+    class StrengtheningLevel : AzurLaneConstants {
+        companion object : AzurLaneConstants {
             const val PLUS0 = 0
             const val PLUS1 = 1
             const val PLUS2 = 2
