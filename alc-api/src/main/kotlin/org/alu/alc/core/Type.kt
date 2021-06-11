@@ -39,8 +39,7 @@ interface Type {
     }
 
     /**
-     * 表示防空炮类型，该枚举只是为了方便对[com.xymul.AzurLaneCalculator.core.weapons.AntiAircraftGun]
-     * 做出特化所提供的
+     * 表示防空炮类型
      * */
     enum class AntiAircraftType : Type {
         COMMON
@@ -146,9 +145,9 @@ interface Type {
     }
 
     /**
-     * 表示属性值的加成类型
+     * 表示属性值/对最终伤害的加成类型
      * */
-    enum class BonusType : Type {
+    enum class BonusType: Type {
         FIREPOWER,
         TORPEDO,
         ANTI_AIRCRAFT,
@@ -159,6 +158,15 @@ interface Type {
         ACCURACY,
         SPEED,
         EVASION,
-        ANTI_SUBMARINE
+        ANTI_SUBMARINE,
     }
+
+    enum class AffectTargetType {
+        SELF,
+        ENEMY
+
+        // todo: 判断目标是否受到buff影响
+    }
+
 }
+

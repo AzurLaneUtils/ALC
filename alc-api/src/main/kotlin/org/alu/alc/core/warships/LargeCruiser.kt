@@ -1,5 +1,6 @@
 package org.alu.alc.core.warships
 
+import org.alu.alc.core.Skill
 import org.alu.alc.core.Type
 import org.alu.alc.core.Warship
 import org.alu.alc.core.units.EquipmentSlots
@@ -23,7 +24,8 @@ class LargeCruiser(
     override val accuracy: Int,
     override val antiSubmarine: Int,
     override val hasTorpedo: Boolean,
-    override val affection: Warship.Affection
+    override val affection: Warship.Affection,
+    override val skills: Array<Skill>
 ) : Warship {
     override val shipType: Type.ShipType = Type.ShipType.CB
     override val hasMainGun: Boolean = true
