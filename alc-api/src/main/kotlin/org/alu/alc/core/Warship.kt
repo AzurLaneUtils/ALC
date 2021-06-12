@@ -84,6 +84,8 @@ interface Warship {
 
     val skills: Array<Skill>
 
+    val faction: Type.Faction
+
     fun getAttr(btype: Type.BonusType): Int =
         when (btype) {
             FIREPOWER -> firepower
@@ -97,6 +99,7 @@ interface Warship {
             SPEED -> speed
             EVASION -> evasion
             ANTI_SUBMARINE -> antiSubmarine
+            DAMAGE -> throw Exception("This kind of Type shouldn't appear here")
         }
 
     companion object {
@@ -127,7 +130,8 @@ interface Warship {
             DEFAULT_NUMBER,
             DEFAULT_NUMBER,
             Affection.OATH200,
-            arrayOf()
+            arrayOf(),
+            Type.Faction.OTHERS
         )
     }
 
