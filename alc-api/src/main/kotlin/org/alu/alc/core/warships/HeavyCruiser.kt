@@ -26,7 +26,8 @@ class HeavyCruiser(
     override val hasTorpedo: Boolean,
     override val hasAntiAircraftGun: Boolean,
     override val affection: Warship.Affection,
-    override val skills: Array<Skill>
+    override val skills: Array<Skill>,
+    override val faction: Type.Faction
 ) : Warship {
     override val shipType: Type.ShipType =
         if (hasTorpedo) Type.ShipType.CAT

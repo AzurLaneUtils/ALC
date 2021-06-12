@@ -26,7 +26,8 @@ class LightAircraftCarrier(
     override val accuracy: Int,
     override val antiSubmarine: Int,
     override val affection: Warship.Affection,
-    override val skills: Array<Skill>
+    override val skills: Array<Skill>,
+    override val faction: Type.Faction
 ) : Warship {
     override val shipType: Type.ShipType = Type.ShipType.CVL
     override val hasMainGun: Boolean = false

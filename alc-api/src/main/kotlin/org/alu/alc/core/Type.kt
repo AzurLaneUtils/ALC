@@ -133,15 +133,19 @@ interface Type {
     }
 
     /**
-     * 表示装备和武器的适用性，该枚举和[Type.ShipType]除含有[ALL]外完全一致
+     * 表示装备/武器的可作用对象，该枚举和[Type.ShipType]除含有[ALL]外完全一致
      *
      * @see Type.ShipType
      * */
     enum class Applicability : Type {
         DD, CL, CA, CB, CLT, CAT, CAV, BB, BC, BM, BBV, CV, CVL, AR, SS,
 
-        /** 表示该装备/武器适用于所有舰船 */
-        ALL
+        /** 表示该装备/武器可被作用于所有舰船 */
+        ALL;
+    }
+
+    enum class Faction : Type {
+        SAKURA_EMPIRE, OTHERS,
     }
 
     /**
@@ -159,13 +163,7 @@ interface Type {
         SPEED,
         EVASION,
         ANTI_SUBMARINE,
-    }
-
-    enum class AffectTargetType {
-        SELF,
-        ENEMY
-
-        // todo: 判断目标是否受到buff影响
+        DAMAGE
     }
 
 }
