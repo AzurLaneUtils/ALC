@@ -2,7 +2,7 @@ package org.alu.alc.core.weapons
 
 import org.alu.alc.core.Type
 import org.alu.alc.core.Weapon
-import org.alu.alc.core.units.ShellEfficiency
+import org.alu.alc.core.ShellEfficiency
 
 data class BBMainGun(
     override val basicDamage: Int,

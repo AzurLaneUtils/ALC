@@ -1,10 +1,15 @@
-package org.alu.alc.core.units
+package org.alu.alc.core
 
 import org.alu.alc.core.Type
 import java.io.Serializable
 
+/**
+ * 表示一个技能的应用对象
+ * */
 data class AffectObject(
+    /** 技能是否作用于他人 */
     val toOthers: Boolean,
+    /** 技能是否作用于自己 */
     val toSelf: Boolean,
     /** 表示技能可作用的舰船，如果技能只作用于自己，则该值必须包含自己的舰船类型 */
     val affectShips: ArrayList<Type.ShipType>,

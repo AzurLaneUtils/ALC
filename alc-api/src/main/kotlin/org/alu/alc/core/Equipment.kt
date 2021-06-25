@@ -3,6 +3,8 @@ package org.alu.alc.core
 /**
  * 表示一个设备
  * @author Xymul
+ *
+ * // TODO: impl this
  */
 interface Equipment {
     /**

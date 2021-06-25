@@ -1,8 +1,5 @@
 package org.alu.alc.core
 
-import org.alu.alc.core.units.AffectObject
-import org.alu.alc.core.units.InitException
-
 class Skill(
     private val desc: String,
     /**
@@ -10,8 +7,9 @@ class Skill(
      *
      * 举个例子，比如说海妈的技能"雷达扫描"，其对应技能实体构造传参应该如下:
      * ```kotlin
-     * val skill = Skill("...", arrayOf(Pair(Type.BonusType.DEBUFF_TO_ENEMY, 0.4))
+     * val skill = Skill("...", arrayOf(Pair(Type.BonusType.DAMAGE, 0.4))
      * ```
+     * 注:海妈的雷达扫描属于debuff，属于单独乘算项，需要区别技能的优先级
      * */
     val effects: Array<Pair<ArrayList<Type.BonusType>, Double>>,
     /** 技能的强化等级 */
@@ -23,28 +21,42 @@ class Skill(
      *
      * 在一个舰队中，它的最小值必须为0且连续
      *
-     * **REQUIREMENTS**：
+     * **REQUIREMENTS**
+     * - 在初始化该属性时，IntArray中的元素必须不能为负，否则行为未定义。
+     *   可能导致的问题: 原本两个不同优先级的技能处理后优先级相同
      * - 如果一个舰队中，没有一个优先级为1的技能，则技能优先级全部-1处理直到有1出现
      * */
-    val priorities: IntArray,
+    val priorities: MutableList<Int>,
     /**
      * 表示这个技能适用于哪些舰船
-     *
-     * 对于Pair.second的值，分为一下几种:
-     * - (f, t): 表示作用对象是除自已以外的符合Pair.first的舰船
-     * - (t, f): 表示作用对象是自己
-     * - (f, f): 表示buff不作用于任何对象，如果这样，请将[Skill.isEnable]改为false，否则抛出异常
-     * [InitException]
-     * - (t, t): 表示作用对象是自己和所用符合Pair.first的舰船
      * */
-    val affectTargets: AffectObject
+    val affectTargets: AffectObject,
+    /** 技能的CD */
+    val cd: Double
 ) {
     init {
-        if (!affectTargets.toOthers && !affectTargets.toSelf) {
-            throw InitException("""
-                affectTargets.second.first == affectTargets.second.second == false.
-                It's not allowed.
-            """)
+        // 将负数化正
+        var hasZero = false
+        for ((flag, e) in priorities.withIndex()) {
+            if (e == 0 && !hasZero) {
+                hasZero = true
+            }
+            if (e < 0) {
+                priorities[flag] = -e
+            }
+        }
+        // 将最小值置零
+        if (!hasZero) {
+            while (true) {
+                priorities.forEach {
+                    it.minus(1)
+                }
+                for (e in priorities) {
+                    if (e == 0) {
+                        break
+                    }
+                }
+            }
         }
     }
 }

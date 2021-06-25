@@ -1,6 +1,4 @@
-package org.alu.alc.core.units
-
-import org.alu.alc.core.Equipment
+package org.alu.alc.core
 
 /**
  * 作为舰船设备插槽的存储类
