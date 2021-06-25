@@ -1,4 +1,4 @@
-package org.alu.alc.core.units
+package org.alu.alc.core
 
 import org.alu.alc.core.Weapon
 

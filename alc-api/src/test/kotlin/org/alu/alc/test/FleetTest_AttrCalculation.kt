@@ -4,9 +4,9 @@ import org.alu.alc.core.Fleet
 import org.alu.alc.core.Skill
 import org.alu.alc.core.Type.*
 import org.alu.alc.core.Warship
-import org.alu.alc.core.units.AffectObject
-import org.alu.alc.core.units.EquipmentSlots
-import org.alu.alc.core.units.WarshipWeapons
+import org.alu.alc.core.AffectObject
+import org.alu.alc.core.EquipmentSlots
+import org.alu.alc.core.WarshipWeapons
 import org.alu.alc.core.warships.BattleShip
 
 fun main() {
@@ -35,8 +35,9 @@ fun main() {
                 arrayOf(Pair(arrayListOf(BonusType.FIREPOWER), 0.2)),
                 10,
                 true,
-                intArrayOf(0),
-                AffectObject(false, true, arrayListOf(ShipType.BB), arrayListOf(Faction.SAKURA_EMPIRE))
+                arrayListOf(0),
+                AffectObject(false, true, arrayListOf(ShipType.BB), arrayListOf(Faction.SAKURA_EMPIRE)),
+                0.0
             )
         ),
         Faction.SAKURA_EMPIRE
@@ -72,13 +73,14 @@ fun main() {
                 ),
                 10,
                 true,
-                intArrayOf(0, 0, 1),
+                arrayListOf(0, 0, 1),
                 AffectObject(
                     true,
                     true,
                     arrayListOf(ShipType.BB, ShipType.BB, ShipType.CV),
                     arrayListOf(Faction.SAKURA_EMPIRE)
-                )
+                ),
+                0.0
             )
         ),
         Faction.SAKURA_EMPIRE

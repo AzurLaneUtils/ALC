@@ -1,9 +1,6 @@
 package org.alu.alc.core
 
 import org.alu.alc.core.AzurLaneConstants.Companion.DEFAULT_NUMBER
-import org.alu.alc.core.units.EquipmentSlots
-import org.alu.alc.core.units.WarshipWeapons
-import org.alu.alc.core.units.WeaponSlot
 import org.alu.alc.core.warships.Destroyer
 import org.alu.alc.core.Type.BonusType.*
 
@@ -86,7 +83,8 @@ interface Warship {
 
     val faction: Type.Faction
 
-    fun getAttr(btype: Type.BonusType): Int =
+    // todo: 加上武器加成后的属性
+    fun getTrulyAttr(btype: Type.BonusType): Int =
         when (btype) {
             FIREPOWER -> firepower
             TORPEDO -> torpedo

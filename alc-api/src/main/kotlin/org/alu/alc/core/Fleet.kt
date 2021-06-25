@@ -2,22 +2,25 @@ package org.alu.alc.core
 
 class Fleet {
     private val ships = Array(6) { Warship.makeDefaultWarship() }
+
     /** 该舰队中技能优先级的最大值 */
     private var maximumTypes: Int = 1
 
     // todo
     fun putShip(pos: Position, ship: Warship) {
         this.ships[pos.toInt()] = ship
-        for (aship in ships) {
-            for (skill in aship.skills) {
-                for ((loopFlag, _) in skill.effects.withIndex()) {
-                    if (maximumTypes < skill.priorities[loopFlag] + 1) {
-                        maximumTypes = 0
-                        maximumTypes += skill.priorities[loopFlag] + 1
-                    }
+        for (skill in ship.skills) {
+            for ((loopFlag, _) in skill.effects.withIndex()) {
+                if (maximumTypes < skill.priorities[loopFlag] + 1) {
+                    maximumTypes = 0
+                    maximumTypes = skill.priorities[loopFlag] + 1
                 }
             }
         }
+    }
+
+    fun getShip(pos: Position): Warship {
+        return this.ships[pos.toInt()]
     }
 
     /** 该函数获取的是**游戏内舰队面板**看到的炮击总值 */
@@ -25,22 +28,45 @@ class Fleet {
         ships[0].firepower + ships[1].firepower + ships[2].firepower +
                 ships[3].firepower + ships[4].firepower + ships[5].firepower
 
+    /**
+     * 计算出舰船被buff后的真实属性
+     *
+     * 如果是**直接增伤buff**，那么应使用[damageBuff]去单独获取
+     *
+     * todo: 放在Chapter内计算
+     * */
     fun trueAttrOfOne(btype: Type.BonusType, pos: Position): Double {
         // todo
-        val ship = ships[pos.toInt()]
+        val ship = getShip(pos)
         var flag = 0
         val bonus = DoubleArray(maximumTypes)
         while (flag < maximumTypes) {
             bonus[flag] = allBuffOfThisKindToOne(flag, btype, ship)
             flag++
         }
-        var source: Double = ship.getAttr(btype).toDouble()
+        var source: Double = ship.getTrulyAttr(btype).toDouble()
         for (b in bonus) {
             source *= (1 + b)
         }
         return source
     }
 
+    fun damageBuff(btype: Type.BonusType, pos: Position): Double {
+        val ship = this.getShip(pos)
+        var flag = 0
+        val bonus = DoubleArray(maximumTypes)
+        while (flag < maximumTypes) {
+            bonus[flag] = allBuffOfThisKindToOne(flag, btype, ship)
+            flag++
+        }
+        var buff: Double = 0.0
+        for (e in bonus) {
+            buff *= (1 + e)
+        }
+        return buff
+    }
+
+    /** 舰船的位置信息 */
     enum class Position {
         F1, F2, F3, B1, B2, B3;
 
@@ -54,7 +80,7 @@ class Fleet {
         }
     }
 
-    // todo
+    // todo: move it to another kt file.
     private fun allBuffOfThisKindToOne(priority: Int, btype: Type.BonusType, ws: Warship): Double {
         var bonus = 0.0
         for (ship in ships) {

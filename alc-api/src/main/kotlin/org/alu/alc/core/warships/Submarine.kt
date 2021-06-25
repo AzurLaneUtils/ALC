@@ -3,8 +3,8 @@ package org.alu.alc.core.warships
 import org.alu.alc.core.Skill
 import org.alu.alc.core.Type
 import org.alu.alc.core.Warship
-import org.alu.alc.core.units.EquipmentSlots
-import org.alu.alc.core.units.WarshipWeapons
+import org.alu.alc.core.EquipmentSlots
+import org.alu.alc.core.WarshipWeapons
 
 class Submarine(
     override val weaponSlots: WarshipWeapons,
