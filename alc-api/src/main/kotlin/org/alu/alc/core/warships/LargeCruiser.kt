@@ -3,26 +3,16 @@ package org.alu.alc.core.warships
 import org.alu.alc.core.Skill
 import org.alu.alc.core.Type
 import org.alu.alc.core.Warship
-import org.alu.alc.core.EquipmentSlots
-import org.alu.alc.core.WarshipWeapons
+import org.alu.alc.core.helper.AttributesSet
+import org.alu.alc.core.helper.EquipmentSlots
+import org.alu.alc.core.helper.WarshipWeapons
 
-class LargeCruiser(
+data class LargeCruiser(
     override val weaponSlots: WarshipWeapons,
     override val equipmentSlots: EquipmentSlots,
     override val name: String,
     override val level: Int,
-    override val health: Int,
-    override val armorType: Type.ArmorType,
-    override val reload: Int,
-    override val lucky: Int,
-    override val firepower: Int,
-    override val torpedo: Int,
-    override val speed: Int,
-    override val antiAircraft: Int,
-    override val aviation: Int,
-    override val cost: Int,
-    override val accuracy: Int,
-    override val antiSubmarine: Int,
+    override val attributes: AttributesSet,
     override val hasTorpedo: Boolean,
     override val affection: Warship.Affection,
     override val skills: Array<Skill>,
@@ -32,5 +22,46 @@ class LargeCruiser(
     override val hasMainGun: Boolean = true
     override val hasSecondaryGun: Boolean = !hasTorpedo
     override val hasAntiAircraftGun: Boolean = true
-    override val evasion: Int = 0
+    override var flag: Long = System.nanoTime()
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as LargeCruiser
+
+        if (weaponSlots != other.weaponSlots) return false
+        if (equipmentSlots != other.equipmentSlots) return false
+        if (name != other.name) return false
+        if (level != other.level) return false
+        if (attributes != other.attributes) return false
+        if (hasTorpedo != other.hasTorpedo) return false
+        if (affection != other.affection) return false
+        if (!skills.contentEquals(other.skills)) return false
+        if (faction != other.faction) return false
+        if (shipType != other.shipType) return false
+        if (hasMainGun != other.hasMainGun) return false
+        if (hasSecondaryGun != other.hasSecondaryGun) return false
+        if (hasAntiAircraftGun != other.hasAntiAircraftGun) return false
+        if (flag != other.flag) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = weaponSlots.hashCode()
+        result = 31 * result + equipmentSlots.hashCode()
+        result = 31 * result + name.hashCode()
+        result = 31 * result + level
+        result = 31 * result + attributes.hashCode()
+        result = 31 * result + hasTorpedo.hashCode()
+        result = 31 * result + affection.hashCode()
+        result = 31 * result + skills.contentHashCode()
+        result = 31 * result + faction.hashCode()
+        result = 31 * result + shipType.hashCode()
+        result = 31 * result + hasMainGun.hashCode()
+        result = 31 * result + hasSecondaryGun.hashCode()
+        result = 31 * result + hasAntiAircraftGun.hashCode()
+        result = 31 * result + flag.hashCode()
+        return result
+    }
 }

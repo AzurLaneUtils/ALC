@@ -3,6 +3,7 @@ package org.alu.alc.core
 import org.alu.alc.core.Type.Applicability.*
 import org.alu.alc.core.weapons.DDMainGun
 import org.alu.alc.core.AzurLaneConstants.Companion.DEFAULT_NUMBER
+import org.alu.alc.core.helper.ShellEfficiency
 
 interface Weapon {
     /** 武器的单发子弹伤害 */

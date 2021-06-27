@@ -1,4 +1,4 @@
-package org.alu.alc.core
+package org.alu.alc.core.helper
 
 /**
  * 作为舰船武器插槽的存储类

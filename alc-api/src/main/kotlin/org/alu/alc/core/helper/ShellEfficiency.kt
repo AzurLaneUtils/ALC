@@ -1,4 +1,4 @@
-package org.alu.alc.core
+package org.alu.alc.core.helper
 
 /**
  * 作为炮弹补正的存储类
