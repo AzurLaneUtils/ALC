@@ -6,5 +6,8 @@ package org.alu.alc.core
  * todo: impl this
  * */
 interface Chapter {
-    fun fleetOf(id: Int): Fleet
+    /**
+     * 获取第[fpos]个舰队
+     * */
+    fun fleetOf(fpos: Int): Fleet
 }

@@ -2,7 +2,7 @@ package org.alu.alc.core.weapons
 
 import org.alu.alc.core.Type
 import org.alu.alc.core.Weapon
-import org.alu.alc.core.ShellEfficiency
+import org.alu.alc.core.helper.ShellEfficiency
 
 /**
  * 该类表示**轰炸/鱼雷舰载机**类型的武器

@@ -2,10 +2,12 @@ package org.alu.alc.core.weapons
 
 import org.alu.alc.core.Type
 import org.alu.alc.core.Weapon
-import org.alu.alc.core.ShellEfficiency
+import org.alu.alc.core.helper.ShellEfficiency
 
 /**
  * 表示该武器属于**dd主炮/战列副炮**
+ *
+ * **其主属性必须是炮击**
  * */
 class DDMainGun(
     override val basicDamage: Int,
