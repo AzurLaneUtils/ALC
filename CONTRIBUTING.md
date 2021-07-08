@@ -17,7 +17,6 @@
 - 解决issues中的问题
 
 ### 注意事项
-- 对于本项目，我们不赞成添加任何的java代码
 - 尽量不要引用新库
 - 遵守kotlin编码规范。如果您使用idea进行开发，那么请将项目的CodeStyle设置为**Kotlin style guide**,
 并且在提交前格式化代码。
