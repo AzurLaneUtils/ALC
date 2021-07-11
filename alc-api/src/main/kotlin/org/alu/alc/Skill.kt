@@ -2,7 +2,7 @@ package org.alu.alc
 
 import org.alu.alc.internal.units.AffectObject
 
-import org.alu.alc.internal.units.Effects
+import org.alu.alc.internal.units.Effect
 
 /**
  * 表示一个舰船/装备的技能
@@ -12,9 +12,9 @@ class Skill(
     val desc: String,
 
     /**
-     * 该参数格式为:Effects(加成类型，加成值)
+     * 该参数格式为:Effect(加成类型，加成值)
      * */
-    val effects: Effects,
+    val effect: Effect,
 
     /** 技能的强化等级 */
     val level: Int,
@@ -44,11 +44,7 @@ class Skill(
 ) {
     init {
         // 将负数化正
-        var hasZero = false
         for ((flag, e) in priorities.withIndex()) {
-            if (e == 0 && !hasZero) {
-                hasZero = true
-            }
             if (e < 0) {
                 priorities[flag] = -e
             }

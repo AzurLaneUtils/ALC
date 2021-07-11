@@ -2,7 +2,7 @@ package org.alu.alc.internal
 
 import org.alu.alc.Equipable
 import org.alu.alc.Type
-import org.alu.alc.internal.units.AttributesSet
+import org.alu.alc.internal.units.Attributes
 
 /**
  * 表示一个设备
@@ -16,7 +16,7 @@ data class Equipment(
     /**
      * 装备的属性列表
      * */
-    override val attributes: AttributesSet,
+    override val attributes: Attributes,
 
     /**
      * 该属性表示装备的强化等级，该值必须是[AzurLaneConstants.StrengtheningLevel]的一项
@@ -24,14 +24,14 @@ data class Equipment(
     override val level: Int,
 
     /**
-     * 表示装备的适用性(即可以装备于哪些舰船上)
-     */
-    override val equippedShips: Array<Type.ShipType>,
-
-    /**
      * 表示装备的稀有度，该值必须是[AzurLaneConstants.EquipableRarities]的一项
      * */
     override val rarity: Int,
+
+    /**
+     * 表示装备的适用性(即可以装备于哪些舰船上)
+     */
+    override val equippedShips: Array<Type.ShipType>
 ) : Equipable {
 
     override fun equals(other: Any?): Boolean {

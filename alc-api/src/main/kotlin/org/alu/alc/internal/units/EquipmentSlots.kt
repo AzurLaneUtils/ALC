@@ -9,7 +9,7 @@ import org.alu.alc.internal.combatPower
  * 作为舰船设备插槽的存储类
  * */
 class EquipmentSlots {
-    val equipments: Array<Slot> = Array(5) { Slot(EquipableFactory().newFilledEquipment()) }
+    val equipments: Array<Slot> = Array(5) { Slot(EquipableFactory().newEquipmentForFilling()) }
 
     fun totalCombatPower(): Int {
         var cp = 0

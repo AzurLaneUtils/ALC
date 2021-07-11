@@ -26,11 +26,11 @@ data class Chapter(
             buffList.add(fl.getBuffOfTypeToAffectObject(btype, thisShip))
         }
         val mergedBuff = buffCalculator.mergeBuffs(buffList)
-        buffCalculator.maximumTypes = maximumOf(mergedBuff.priorities.toIntArray())
+        buffCalculator.maximumTypes = max(mergedBuff.priorities.toIntArray())
         return fleet.getShip(spos).getTrulyAttr(btype) * buffCalculator.actualBuffOfOne(mergedBuff)
     }
 
-    private fun maximumOf(numbers: IntArray): Int {
+    private fun max(numbers: IntArray): Int {
         var maximum: Int = numbers[0]
         for (e in numbers) {
             if (e > maximum) {

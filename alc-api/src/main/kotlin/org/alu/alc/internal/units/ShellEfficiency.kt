@@ -7,4 +7,7 @@ data class ShellEfficiency(
     val toLightArmor: Double,
     val toMediumArmor: Double,
     val toHeavyArmor: Double
-)
+) {
+    companion object {
+    }
+}

@@ -1,7 +1,8 @@
 package org.alu.alc
 
 import org.alu.alc.internal.Equipment
-import org.alu.alc.internal.units.AttributesSet
+import org.alu.alc.internal.Weapon
+import org.alu.alc.internal.units.Attributes
 
 // todo: impl
 class EquipableFactory {
@@ -25,15 +26,32 @@ class EquipableFactory {
     )
 
     /**
+     * 获取默认填充插槽的武器
+     * */
+    fun newWeaponForFilling(): Weapon {
+        return Weapon(
+            "unequipped",
+            Attributes(),
+            AzurLaneConstants.StrengtheningLevel.PLUS0,
+            AzurLaneConstants.EquipableRarities.UNEQUIPPED,
+            this.equipableToAll,
+            shells = arrayListOf(),
+            -1.0,
+            Double.MAX_VALUE,
+            -1
+        )
+    }
+
+    /**
      * 获取默认填充插槽的装备
      * */
-    fun newFilledEquipment(): Equipment {
+    fun newEquipmentForFilling(): Equipment {
         return Equipment(
-            "default",
-            AttributesSet(),
+            "unequipped",
+            Attributes(),
             AzurLaneConstants.StrengtheningLevel.PLUS0,
-            this.equipableToAll,
-            AzurLaneConstants.EquipableRarities.UNEQUIPPED
+            AzurLaneConstants.EquipableRarities.UNEQUIPPED,
+            this.equipableToAll
         )
     }
 }

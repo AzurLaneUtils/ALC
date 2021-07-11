@@ -30,7 +30,7 @@ class Fleet(
         }
         this.ships[pos.toInt() - 1] = ship
         for (skill in ship.skills) {
-            for ((loopFlag, _) in skill.effects.values.withIndex()) {
+            for ((loopFlag, _) in skill.effect.values.withIndex()) {
                 if (buffCalculator.maximumTypes < skill.priorities[loopFlag]) {
                     buffCalculator.maximumTypes = 0
                     buffCalculator.maximumTypes = skill.priorities[loopFlag]
@@ -135,7 +135,8 @@ class Fleet(
                 for (skill in ship.skills) {
                     // 如果技能未开启或不满足作用条件，则考虑下一个技能
                     if (!skill.isEnable) continue
-                    if (!skill.affectTargets.affectShips.contains(ws.shipType)
+                    if (
+                        !skill.affectTargets.affectShips.contains(ws.shipType)
                         || !skill.affectTargets.affectFactions.contains(ws.faction)
                     ) continue
                     // 如果舰船属于其他舰队
@@ -143,9 +144,9 @@ class Fleet(
                         // 则该技能必须满足`作用于另一舰队对象`，且满足`阵营和舰船类型需求`
                         if (skill.affectTargets.toOtherFleets) {
                             // 获取技能的加成值和其索引
-                            for ((lf, eff) in skill.effects.values.withIndex()) {
+                            for ((lf, eff) in skill.effect.values.withIndex()) {
                                 // 如果该技能在`lf`处的加成类型匹配，且优先级匹配当前优先级
-                                if (skill.effects.type[lf] == btype
+                                if (skill.effect.type[lf] == btype
                                     && skill.priorities[lf] == p
                                 ) {
                                     buff.add(eff)
@@ -163,9 +164,9 @@ class Fleet(
                             // 如果舰船是自身，则技能必须满足`作用于自身`
                             if (!skill.affectTargets.toSelf) continue
                         }
-                        for ((lf, eff) in skill.effects.values.withIndex()) {
+                        for ((lf, eff) in skill.effect.values.withIndex()) {
                             // 如果该技能在`lf`处的加成类型匹配，且优先级匹配当前优先级
-                            if (skill.effects.type[lf] == btype
+                            if (skill.effect.type[lf] == btype
                                 && skill.priorities[lf] == p
                             ) {
                                 buff.add(eff)

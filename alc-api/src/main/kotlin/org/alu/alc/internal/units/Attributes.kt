@@ -1,6 +1,6 @@
 package org.alu.alc.internal.units
 
-data class AttributesSet(
+data class Attributes(
     /** 舰船的血量或装备加成的血量 */
     val health: Int = 0,
 

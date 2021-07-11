@@ -1,7 +1,7 @@
 package org.alu.alc
 
 import org.alu.alc.Type.BonusType.*
-import org.alu.alc.internal.units.AttributesSet
+import org.alu.alc.internal.units.Attributes
 import org.alu.alc.internal.units.EquipmentSlots
 import kotlin.math.floor
 
@@ -21,7 +21,7 @@ data class Warship(
     val level: Int,
 
     /** 舰船的各项属性 */
-    val attributes: AttributesSet,
+    val attributes: Attributes,
 
     /**
      * 舰船的装甲类型

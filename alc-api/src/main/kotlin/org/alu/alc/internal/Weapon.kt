@@ -3,39 +3,27 @@ package org.alu.alc.internal
 import org.alu.alc.Equipable
 import org.alu.alc.Type
 import org.alu.alc.Type.ShipType.*
-import org.alu.alc.internal.units.AttributesSet
-import org.alu.alc.internal.units.ShellEfficiency
+import org.alu.alc.internal.units.Attributes
+import org.alu.alc.internal.units.Shell
 
 data class Weapon(
-    /** 武器的单发子弹伤害 */
-    val basicDamage: Int,
+    override val name: String,
 
-    /**
-     * 武器的子弹类型
-     * */
-    val ammunitionType: Type.Ammunition,
+    override val attributes: Attributes,
 
-    /** 武器的对甲效率 */
-    val efficiencyToArmor: ShellEfficiency,
+    override val level: Int,
 
-    /** 武器的子弹数 */
-    val hit: Int,
+    override val rarity: Int,
+
+    override val equippedShips: Array<Type.ShipType>,
+
+    val shells: ArrayList<Shell>,
 
     /** 武器的cd */
     val cd: Double,
 
     /** 武器系数 */
     val coefficient: Double,
-
-    override val attributes: AttributesSet,
-
-    override val level: Int,
-
-    override val name: String,
-
-    override val rarity: Int,
-
-    override val equippedShips: Array<Type.ShipType>,
 
     /** 主炮散步，如果武器是非舰炮类型则为0 */
     val rng: Int = 0
@@ -59,34 +47,28 @@ data class Weapon(
 
         other as Weapon
 
-        if (basicDamage != other.basicDamage) return false
-        if (ammunitionType != other.ammunitionType) return false
-        if (efficiencyToArmor != other.efficiencyToArmor) return false
-        if (hit != other.hit) return false
-        if (cd != other.cd) return false
-        if (coefficient != other.coefficient) return false
+        if (name != other.name) return false
         if (attributes != other.attributes) return false
         if (level != other.level) return false
-        if (name != other.name) return false
         if (rarity != other.rarity) return false
         if (!equippedShips.contentEquals(other.equippedShips)) return false
+        if (shells != other.shells) return false
+        if (cd != other.cd) return false
+        if (coefficient != other.coefficient) return false
         if (rng != other.rng) return false
 
         return true
     }
 
     override fun hashCode(): Int {
-        var result = basicDamage
-        result = 31 * result + ammunitionType.hashCode()
-        result = 31 * result + efficiencyToArmor.hashCode()
-        result = 31 * result + hit
-        result = 31 * result + cd.hashCode()
-        result = 31 * result + coefficient.hashCode()
+        var result = name.hashCode()
         result = 31 * result + attributes.hashCode()
         result = 31 * result + level
-        result = 31 * result + name.hashCode()
         result = 31 * result + rarity
         result = 31 * result + equippedShips.contentHashCode()
+        result = 31 * result + shells.hashCode()
+        result = 31 * result + cd.hashCode()
+        result = 31 * result + coefficient.hashCode()
         result = 31 * result + rng
         return result
     }
