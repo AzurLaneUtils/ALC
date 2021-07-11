@@ -4,5 +4,4 @@
 
 rootProject.name = "AzurLaneCalc"
 
-include(":alc-api")
-include(":alc-client")
+include("alc-api")
