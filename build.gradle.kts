@@ -8,13 +8,13 @@ buildscript {
 }
 
 plugins {
-    kotlin("jvm") version "1.5.0"
+    kotlin("jvm") version "1.4.32"
     id("org.jetbrains.dokka") version "1.4.32"
 }
 
 allprojects {
     group = "org.alu"
-    version = "0.1.20200628"
+    version = "0.1.20200711"
 
     repositories {
         maven(url = "https://mirrors.huaweicloud.com/repository/maven")
