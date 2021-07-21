@@ -3,6 +3,7 @@ package org.alu.alc.internal.ship
 import org.alu.alc.internal.annotations.ALUnit
 import org.alu.alc.internal.annotations.IncorrectlyImplementation
 import org.alu.alc.internal.annotations.Specialization
+import org.alu.alc.internal.equ.Ammunition
 import org.alu.alc.internal.equ.Equipment
 import org.alu.alc.internal.equ.Equippable
 import org.alu.alc.internal.equ.Weapon
@@ -18,7 +19,7 @@ sealed class SlotTrait {
 @Specialization
 data class WeaponSlot(
     /** 插槽中装备的武器 */
-    override val item: Weapon? = null,
+    override val item: Weapon<Ammunition>? = null,
     /** 插槽的效率 */
     val efficiency: Double = 0.0,
     /** 插槽的底座 */

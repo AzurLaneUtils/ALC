@@ -1,17 +1,34 @@
 package org.alu.alc.internal.equ
 
+import org.alu.alc.internal.AmmuType
 import org.alu.alc.internal.annotations.ALUnit
 
-/**
- * 代表一个炮弹实体
- *
- * 该类记录了一个[Weapon]所拥有炮弹的伤害、炮弹数量、以及三甲补正
- * */
 @ALUnit
-data class Ammunition(
+sealed class Ammunition(
     var damage: Int,
     var hits: Int,
     var toLight: Double,
     var toMedium: Double,
     var toHeavy: Double,
+    var type: AmmuType
 )
+
+class AACannon(
+    damage: Int
+) : Ammunition(damage, 1, 0.0, 0.0, 0.0, AmmuType.AA)
+
+/** 表示**主炮**的弹药 */
+class Cannon(
+    damage: Int,
+    hits: Int,
+    toLight: Double,
+    toMedium: Double,
+    toHeavy: Double,
+    /** 炮弹的飞行速度 */
+    var speed: Int,
+    /** 炮弹的伤害范围， */
+    var dmgRange: Int,
+    /** 表示炮弹的散步 */
+    var spread: Int,
+    type: AmmuType
+) : Ammunition(damage, hits, toLight, toMedium, toHeavy, type)
