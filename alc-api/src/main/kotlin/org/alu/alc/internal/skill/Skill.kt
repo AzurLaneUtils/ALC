@@ -1,12 +1,17 @@
 package org.alu.alc.internal.skill
 
+import org.alu.alc.internal.Faction
 import org.alu.alc.internal.BonusType
 import org.alu.alc.internal.ShipType
 
 data class Skill(
+    /** 技能的名称 */
     val name: String,
+    /** 技能的描述 */
     val desc: String,
+    /** 技能的cd */
     val cd: Double,
+    /** 技能所拥有buff的数量 */
     private val number: Int
 ) {
     // buff的作用效果
@@ -18,7 +23,7 @@ data class Skill(
     // buff的作用舰船
     private val ships = ArrayList<ShipType>(number)
     // buff的作用阵营
-    private val factions = ArrayList<ShipType>(number)
+    private val factions = ArrayList<Faction>(number)
     // 对应buff是否开启
     private val flags = ArrayList<Boolean>(number)
 }
