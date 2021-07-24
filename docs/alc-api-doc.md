@@ -7,7 +7,6 @@
 | parameters | characteristic | desc |
 | ---------- | -------------- | ---- |
 | Boolean | major | 构造一个空Fleet，如果参数是true，则构造一个潜艇舰队 |
-| Boolean, vararg Warship | minor | 用指定Warship构造舰队，如果传入的船的数量和舰队状态不符合则抛出异常 |
 
 该类含有以下字段:
 | name | type | desc | access |
