@@ -4,4 +4,7 @@ import java.lang.annotation.Inherited
 
 @Inherited
 @Target(AnnotationTarget.PROPERTY)
-annotation class IncorrectlyImplementation()
+@Retention(AnnotationRetention.SOURCE)
+annotation class IncorrectlyImplementation(
+    val cause: String = ""
+)
