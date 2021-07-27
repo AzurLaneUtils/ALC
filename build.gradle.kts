@@ -14,7 +14,7 @@ plugins {
 
 allprojects {
     group = "org.alu"
-    version = "0.1.20200711"
+    version = "0.1.202107"
 
     repositories {
         maven(url = "https://mirrors.huaweicloud.com/repository/maven")
