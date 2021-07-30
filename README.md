@@ -7,3 +7,5 @@
 目前该项目仍处于开发阶段，我们欢迎您来帮助该项目完成开发:[CONTRIBUTING](./CONTRIBUTING.md)
 
 项目按照[AGPL3.0](https://www.gnu.org/licenses/agpl-3.0.txt)协议开源。
+
+<s><i>由于个人原因，大部分时间都在咕</i></s>
