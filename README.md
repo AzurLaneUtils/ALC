@@ -6,6 +6,8 @@
 
 ## Licence
 ```
+AzurLaneCalculator, A multifunctional calculator for AzurLane.
+
 Copyright (C) 2020-2021. AzurLaneUtils Organization and contributors.
 
 This program is free software: you can redistribute it and/or modify
