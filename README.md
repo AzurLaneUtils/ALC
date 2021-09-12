@@ -28,4 +28,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 项目按照[AGPL3.0](https://www.gnu.org/licenses/agpl-3.0.txt)协议开源。
 
-更新就等开学了再说
+<s>更新就等开学了再说</s>
+
+月更
